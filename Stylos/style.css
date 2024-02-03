@@ -27,41 +27,52 @@ main {
     padding: 20px;
 }
 
-#contenedor-imagen img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+#contenedor-imagen {
+    max-width: 90%; /* Reduzco el tamaño de la imagen al 80% del contenedor */
     border-radius: 50%;
 }
 
 #contedor-imagenpresentacion {
-    display: flex;
-    align-items: center;
-}
-
-#contenedor-presentacion h1 {
-    font-size: 2.5em; /* Ajusta el tamaño del h1 según tus preferencias */
-    margin-top: 0; /* Elimina el margen superior predeterminado del h1 */
-}
-
-#contenedor-presentacion h5 {
-    font-size: 1.5em; /* Ajusta el tamaño del h5 según tus preferencias */
-    margin-top: 0.5em; /* Ajusta el margen superior del h5 según tus preferencias */
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "imagen h1 h1"
+                         "imagen h5 h5"
+                         "imagen p  p";
+    column-gap: 20px;                    
 }
 
 #contenedor-imagen {
-    flex: 1;
-    padding: 20px;
+    grid-area: imagen;
+    grid-column: 1; /* Coloca en la primera columna */
+    padding: 20px 0 20px 20px;
+    margin: 0;
 }
 
 #contenedor-presentacion {
-    flex: 2;
-    padding: 20px;
+    grid-area: p;
+    grid-column: 2; /* Coloca en la segunda columna */
+    padding: 0; /* Reduzco el espacio entre el texto y el contenedor */
+    margin: 0 0 70px 0;
 }
 
-#contenedor-presentacion h3 {
-    color: #333;
+#nombre {
+    grid-area: h1;
+    grid-column: 2;
+    font-size: 2.5em;
+    padding: 30px 0 0 0;
+    margin: 50px 0 0 0;
 }
+
+#desarrollador {
+    grid-area: h5;
+    grid-column: 2;
+    font-size: 1.5em;
+    padding: 0;
+    margin: 0;
+}
+
+
+
 
 #contenedor-conocimientos h5, #contenedor-cursos h5 {
     font-size: 1em; /* Ajusta el tamaño del h5 según tus preferencias */
@@ -127,4 +138,67 @@ footer {
 footer a {
     color: white;
     text-decoration: none;
+}
+
+@media only screen and (max-width: 767px) {
+    /* Otros estilos existentes */
+    header {
+        font-size: 18px;
+    }
+
+    #contedor-imagenpresentacion {
+        grid-template-areas: 
+            "imagen nombre"
+            "imagen desarrollador"
+            "p p";
+        grid-template-columns: 50% 50%;
+        align-items: center;
+        text-align: center;
+    }
+
+    #contenedor-imagen {
+        max-width: 90%;
+        height: auto;
+        border-radius: 50%;
+        grid-area: imagen;
+    }
+
+    #nombre {
+        padding: 0;
+        text-align: left;
+        grid-area: nombre;
+        font-size: 30px;
+    }
+    
+    #desarrollador {
+        padding: 0;
+        margin: 0 0 50px 0;
+        font-size: 15px;
+        text-align: left;
+        grid-area: desarrollador;
+    }
+
+    #contenedor-presentacion {
+        text-align: left;
+        grid-area: p;
+    }
+
+    #contenedor-conocimientos,
+    #contenedor-cursos {
+        width: 100%;
+    }
+
+    #contenedor-conocimientos li,
+    #contenedor-cursos li {
+        margin-right: 0;
+        margin-bottom: 1em;
+    }
+
+    #contenedor-conocimientos li img,
+    #contenedor-cursos li img {
+        max-width: 50%;
+        margin-bottom: 0.5em;
+    }
+
+    /* Otros ajustes necesarios */
 }
