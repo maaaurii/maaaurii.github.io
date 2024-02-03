@@ -184,18 +184,39 @@ footer a {
         grid-area: p;
     }
 
-    #contenedor-conocimientos,
+    #contenedor-conocimientos ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Dos columnas fluidas */
+        gap: 1em; /* Espaciado entre elementos */
+        align-items: center;
+        text-align: center;
+    }
+    
+    #contenedor-conocimientos li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 1em;
+    }
+    
+    #contenedor-conocimientos li img {
+        max-width: 100%;
+        margin-bottom: 0.5em;
+    }
+
     #contenedor-cursos {
         width: 100%;
     }
 
-    #contenedor-conocimientos li,
     #contenedor-cursos li {
         margin-right: 0;
         margin-bottom: 1em;
     }
 
-    #contenedor-conocimientos li img,
     #contenedor-cursos li img {
         max-width: 50%;
         margin-bottom: 0.5em;
