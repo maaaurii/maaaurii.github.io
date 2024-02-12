@@ -499,14 +499,23 @@ footer a {
     }
 }
 
-@media only screen and (max-width: 767px) and (max-aspect-ratio: 19.5/9) {
+@media only screen and (max-width: 414px) {
 
-    nav li {
-        font-size: 1.2em;
+    header {
+        width: 100%;
     }
 
-    nav li span {
-        margin-top: 0.5em;
+    #contenedor-imagenheader {
+        margin-left: -10px;
+        
+    }
+
+    #contenedor-nav {
+        margin-right: 150px;
+    }
+
+    nav li {
+        font-size: 16px;
     }
 
     #contenedor-imagenpresentacion {
@@ -514,57 +523,78 @@ footer a {
             "imagen nombre"
             "imagen desarrollador"
             "p p";
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 1fr;
         align-items: center;
         text-align: center;
+        width: 100%;
     }
 
     #contenedor-imagen {
-        max-width: 90%;
+        max-width: 100%;
         height: auto;
         border-radius: 50%;
         grid-area: imagen;
+        margin-left: -18px;
     }
 
     #nombre {
         padding: 0;
         text-align: left;
         grid-area: nombre;
-        font-size: 1.5em;
+        font-size: 25px;
+        margin-top: 20px;
+        margin-right: 15px;
     }
 
     #desarrollador {
-        padding: 0;
-        margin: 0.5em 0 1em 0;
-        font-size: 1em;
+        margin-top: -5px;
+        font-size: 18px;
         text-align: left;
         grid-area: desarrollador;
     }
 
     #contenedor-presentacion {
-        margin-right: 1em;
+        margin: 0 auto;
         text-align: center;
         grid-area: p;
-        font-size: 0.9em;
+        font-size: 15px;
     }
 
-    #contenedor-conocimientos h5,
-    #contenedor-cursos h5 {
-        font-size: 1.5em;
+    #contenedor-conocimientos,
+    #contenedor-cursos {
+        width: 100%;
     }
 
-    #contenedor-conocimientos ul,
-    #contenedor-cursos ul {
+    #contenedor-conocimientos ul {
         list-style: none;
-        padding-left: 2em;
-        margin: 0;
+        padding-left: 20px;
+        margin: 0 auto;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: 1fr;
         gap: 1em;
         align-items: center;
         text-align: center;
     }
 
+
+    #contenedor-conocimientos h5,
+    #contenedor-cursos h5 {
+        font-size: 24px;
+    }
+
+    /*
+    #contenedor-conocimientos ul,
+    #contenedor-cursos ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1em;
+        align-items: center;
+        text-align: center;
+    }
+    */
     #contenedor-conocimientos li,
     #contenedor-cursos li {
         display: flex;
@@ -586,19 +616,31 @@ footer a {
     }
 
     #contenedor-cursos li h5 {
-        font-size: 1em;
+        font-size: 20px;
     }
 
     #contenedor-cursos li p {
-        font-size: 0.8em;
+        font-size: 15px;
+    }
+
+    #contenedor-cursos>ul>li:nth-child(1) img,
+    #contenedor-cursos>ul>li:nth-child(2) img {
+
+        margin-left: -8;
+
     }
 
     footer {
-        font-size: 1.2em;
+        font-size: 16px;
+        width: 103%;
+    }
+
+    footer p,footer img, footer a {
+        margin-right: 20px;
     }
 
     footer a {
-        font-size: 1.5em;
+        font-size: 20px;
     }
 
     footer img {
