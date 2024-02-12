@@ -499,6 +499,114 @@ footer a {
     }
 }
 
+@media only screen and (max-width: 767px) and (max-aspect-ratio: 19.5/9) {
+
+    nav li {
+        font-size: 1.2em;
+    }
+
+    nav li span {
+        margin-top: 0.5em;
+    }
+
+    #contenedor-imagenpresentacion {
+        grid-template-areas:
+            "imagen nombre"
+            "imagen desarrollador"
+            "p p";
+        grid-template-columns: 50% 50%;
+        align-items: center;
+        text-align: center;
+    }
+
+    #contenedor-imagen {
+        max-width: 90%;
+        height: auto;
+        border-radius: 50%;
+        grid-area: imagen;
+    }
+
+    #nombre {
+        padding: 0;
+        text-align: left;
+        grid-area: nombre;
+        font-size: 1.5em;
+    }
+
+    #desarrollador {
+        padding: 0;
+        margin: 0.5em 0 1em 0;
+        font-size: 1em;
+        text-align: left;
+        grid-area: desarrollador;
+    }
+
+    #contenedor-presentacion {
+        margin-right: 1em;
+        text-align: center;
+        grid-area: p;
+        font-size: 0.9em;
+    }
+
+    #contenedor-conocimientos h5,
+    #contenedor-cursos h5 {
+        font-size: 1.5em;
+    }
+
+    #contenedor-conocimientos ul,
+    #contenedor-cursos ul {
+        list-style: none;
+        padding-left: 2em;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1em;
+        align-items: center;
+        text-align: center;
+    }
+
+    #contenedor-conocimientos li,
+    #contenedor-cursos li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 1em;
+    }
+
+    #contenedor-conocimientos li img,
+    #contenedor-cursos li img {
+        max-width: 100%;
+        margin-bottom: 0.5em;
+    }
+
+    #contenedor-cursos li img {
+        max-width: 150%;
+        height: auto;
+    }
+
+    #contenedor-cursos li h5 {
+        font-size: 1em;
+    }
+
+    #contenedor-cursos li p {
+        font-size: 0.8em;
+    }
+
+    footer {
+        font-size: 1.2em;
+    }
+
+    footer a {
+        font-size: 1.5em;
+    }
+
+    footer img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
 @keyframes slideInFromLeft {
     0% {
         opacity: 0;
