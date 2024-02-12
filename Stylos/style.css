@@ -631,6 +631,124 @@ footer a {
     }
 }
 
+@media only screen and (max-width: 414px) {
+
+    header {
+        width: 100%;
+    }
+
+    #contenedor-imagenheader {
+        margin-left: -10px;
+        
+    }
+
+    #contenedor-nav {
+        margin-right: 150px;
+    }
+
+    nav li {
+        font-size: 16px;
+    }
+
+    #contenedor-imagenpresentacion {
+        grid-template-areas:
+            "imagen nombre"
+            "imagen desarrollador"
+            "p p";
+        grid-template-columns: 1fr;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    #contenedor-imagen {
+        max-width: 100%;
+        height: auto;
+        border-radius: 50%;
+        grid-area: imagen;
+    }
+
+    #nombre {
+        padding: 0;
+        text-align: left;
+        grid-area: nombre;
+        font-size: 24px;
+    }
+
+    #desarrollador {
+        padding: 0;
+        margin: 10px 0;
+        font-size: 18px;
+        text-align: left;
+        grid-area: desarrollador;
+    }
+
+    #contenedor-presentacion {
+        margin: 0 auto;
+        text-align: center;
+        grid-area: p;
+        font-size: 16px;
+    }
+
+    #contenedor-conocimientos h5,
+    #contenedor-cursos h5 {
+        font-size: 24px;
+    }
+
+    #contenedor-conocimientos ul,
+    #contenedor-cursos ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1em;
+        align-items: center;
+        text-align: center;
+    }
+
+    #contenedor-conocimientos li,
+    #contenedor-cursos li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 1em;
+    }
+
+    #contenedor-conocimientos li img,
+    #contenedor-cursos li img {
+        max-width: 100%;
+        margin-bottom: 0.5em;
+    }
+
+    #contenedor-cursos li img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #contenedor-cursos li h5 {
+        font-size: 20px;
+    }
+
+    #contenedor-cursos li p {
+        font-size: 15px;
+    }
+
+    footer {
+        font-size: 16px;
+    }
+
+    footer a {
+        font-size: 20px;
+    }
+
+    footer img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
 @keyframes slideInFromTop {
     0% {
         opacity: 0;
