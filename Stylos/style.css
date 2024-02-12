@@ -1,0 +1,548 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #999999;
+}
+
+header {
+    background-color: #1E3B6F;
+    color: white;
+    padding: 20px 26px;
+    /* Aumenta el espacio de relleno superior e inferior */
+    display: flex;
+    /* Utiliza Flexbox */
+    justify-content: space-between;
+    /* Distribuye los elementos a lo largo del contenedor */
+    align-items: center;
+    /* Centra verticalmente los elementos */
+    animation: slideInFromTop 0.5s ease-out forwards;
+}
+
+#contenedor-imagenheader {
+    display: flex;
+    align-items: center;
+    /* Centra verticalmente la imagen */
+}
+
+#contenedor-imagenheader img {
+    width: 60px;
+    /* Ajusta el ancho según tus necesidades */
+    height: 60px;
+    /* Ajusta el alto según tus necesidades */
+    border-radius: 50%;
+    margin-right: 20px;
+    /* Añade un margen a la derecha para separar la imagen del texto */
+    margin-left: 15px;
+}
+
+#contenedor-nav {
+    display: flex;
+}
+
+nav {
+    margin-left: auto;
+    /* Empuja el contenedor-nav hacia la derecha */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav li {
+    display: inline;
+    margin: 0 15px;
+    /* Reduce el margen entre elementos */
+    font-size: 20px;
+    /* Aumenta el tamaño de fuente */
+}
+
+nav li a {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    /* Ajusta el espacio entre el icono y el texto */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    /* Añade una transición suave al color */
+}
+
+nav li span {
+    padding-left: 10px;
+}
+
+nav a:hover,
+footer a:hover,
+#contenedor-cursos li a h5:hover {
+    color: #999999;
+    /* Cambia el color al pasar el ratón por encima */
+}
+
+
+main {
+    padding: 30px;
+}
+
+#contenedor-imagenpresentacion {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "imagen h1 h1"
+        "imagen h5 h5"
+        "imagen p  p";
+    column-gap: 20px;
+    animation: slideInFromLeft 0.7s ease-out forwards;
+    background-color: #f9f9f9;
+    /* Añade un fondo más estético */
+    padding: 20px;
+    /* Añade un espacio interno al contenedor */
+    border-radius: 10px;
+    /* Agrega bordes redondeados al contenedor */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Agrega sombra para dar profundidad */
+    margin-bottom: 30px;
+    position: relative;
+    /* Necesario para el clip-path absoluto */
+    overflow: hidden;
+
+}
+
+#contenedor-imagen {
+    max-width: 90%;
+    /* Reduzco el tamaño de la imagen al 80% del contenedor */
+    border-radius: 50%;
+    grid-area: imagen;
+    grid-column: 1;
+    /* Coloca en la primera columna */
+    padding: 20px 0 20px 20px;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    line-height: 1.5;
+    opacity: 0;
+    /* Inicialmente oculta los elementos */
+    transition: opacity 1.7s ease;
+}
+
+#nombre {
+    grid-area: h1;
+    grid-column: 2;
+    font-size: 6em;
+    padding: 30px 0 0 0;
+    margin: 50px 0 0 0;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
+    opacity: 0;
+    /* Inicialmente oculta los elementos */
+    transition: opacity 1.7s ease;
+}
+
+#desarrollador {
+    color: #1E3B6F;
+    grid-area: h5;
+    grid-column: 2;
+    font-size: 3em;
+    padding: 0;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
+    opacity: 0;
+    /* Inicialmente oculta los elementos */
+    transition: opacity 1.7s ease;
+}
+
+#contenedor-presentacion {
+    grid-area: p;
+    grid-column: 2;
+    /* Coloca en la segunda columna */
+    padding: 0;
+    /* Reduzco el espacio entre el texto y el contenedor */
+    margin: 0 0 70px 0;
+    font-family: 'Arial', sans-serif;
+    /* Cambia la tipografía a Arial o a la que prefieras */
+    font-size: 24px;
+    /* Aumenta el tamaño de la fuente */
+    line-height: 1.5;
+    /* Ajusta el espaciado entre líneas */
+    opacity: 0;
+    /* Inicialmente oculta los elementos */
+    transition: opacity 1.7s ease;
+}
+
+#contenedor-imagenpresentacion.reveal #nombre,
+#contenedor-imagenpresentacion.reveal #desarrollador,
+#contenedor-imagenpresentacion.reveal #contenedor-presentacion,
+#contenedor-imagenpresentacion.reveal #contenedor-imagen {
+    opacity: 1;
+    /* Revela los elementos */
+}
+
+#contenedor-conocimientos {
+    animation: slideInFromRight 0.7s ease-out forwards;
+    background-color: #f9f9f9;
+    /* Añade un fondo más estético */
+    padding: 20px;
+    /* Añade un espacio interno al contenedor */
+    border-radius: 10px;
+    /* Agrega bordes redondeados al contenedor */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Agrega sombra para dar profundidad */
+    position: relative;
+    /* Necesario para el clip-path absoluto */
+    overflow: hidden;
+}
+
+#contenedor-conocimientos ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Centra los elementos */
+}
+
+#contenedor-conocimientos li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    /* Aumenta el espacio entre elementos */
+    margin-right: 30px;
+    /* Aumenta el espacio entre elementos */
+    margin-top: 20px;
+}
+
+#contenedor-conocimientos li img {
+    max-width: 100px;
+    /* Establece un ancho máximo para las imágenes */
+    max-height: 100px;
+    /* Establece una altura máxima para las imágenes */
+    width: auto;
+    /* Permite que la imagen se ajuste proporcionalmente al ancho máximo */
+    height: auto;
+    /* Permite que la imagen se ajuste proporcionalmente al alto máximo */
+    margin: 20px;
+    /* Ajusta el espacio entre la imagen y el texto */
+}
+
+#contenedor-conocimientos h5,
+#contenedor-cursos h5 {
+    font-size: 3em;
+    /* Reduce el tamaño de la fuente */
+    text-align: center;
+    margin: 20px 50px 35px 50px;
+    /* Ajusta el margen superior e inferior del título */
+}
+
+#contenedor-conocimientos li h5,
+#contenedor-cursos li h5 {
+    font-size: 1.2em;
+    /* Reduce el tamaño de la fuente */
+    text-align: center;
+    margin: 0;
+    /* Elimina el margen inferior del texto */
+}
+
+#contenedor-conocimientos ul li,
+#contenedor-conocimientos h5,
+#contenedor-cursos ul li,
+#contenedor-cursos h5 {
+    opacity: 0;
+    /* Inicialmente oculta los elementos */
+    transition: opacity 1.7s ease;
+}
+
+#contenedor-conocimientos.reveal ul li,
+#contenedor-conocimientos.reveal h5,
+#contenedor-cursos.reveal ul li,
+#contenedor-cursos.reveal h5 {
+    opacity: 1;
+    /* Revela los elementos */
+}
+
+#contenedor-cursos {
+    animation: slideInFromLeft 0.7s ease-out forwards;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    /*
+    display: flex;
+    flex-direction: column;
+    */
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#contenedor-cursos ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Centra los elementos */
+    margin-left: 80px;
+    /* Agrega margen a la izquierda para mover la lista hacia la derecha */
+}
+
+#contenedor-cursos li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* Centra el texto */
+    margin-bottom: 1em;
+    margin-right: 5em;
+    margin-top: 50px;
+}
+
+#contenedor-cursos li a {
+    color: #1E3B6F;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+}
+
+#contenedor-cursos li img {
+    max-width: 50%;
+    margin-bottom: 0.5em;
+}
+
+#contenedor-cursos li h5 {
+    color: #1E3B6F;
+    font-size: 2em;
+    padding-top: 20px;
+    margin-bottom: 10px;
+    font-family: 'Arial', sans-serif;
+}
+
+#contenedor-cursos li p {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
+}
+
+footer {
+    background-color: #1E3B6F;
+    /* Azul oscuro profundo */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    animation: slideInFromBottom 0.5s ease-out forwards;
+    font-size: 25px;
+    /* Aumenta el tamaño de la fuente del texto en el footer */
+}
+
+footer img {
+    width: 80px;
+    /* Ajusta el ancho según tus necesidades */
+    height: 80px;
+    /* Ajusta el alto según tus necesidades */
+    border-radius: 50%;
+    margin-right: 20px;
+    /* Añade un margen a la derecha para separar la imagen del texto */
+    margin-left: 15px;
+
+}
+
+footer p {
+    margin-top: 16px;
+}
+
+footer a {
+    font-size: 30px;
+    /* Aumenta el tamaño de la fuente de los íconos */
+    margin: 0 10px;
+    /* Ajusta el margen de los íconos */
+    color: white;
+    text-decoration: none;
+}
+
+
+@media only screen and (max-width: 767px) {
+
+    /* Otros estilos existentes */
+    nav li {
+        font-size: 17px;
+    }
+
+    nav li span {
+        margin-top: 5px;
+    }
+
+
+    #contenedor-imagenpresentacion {
+        grid-template-areas:
+            "imagen nombre"
+            "imagen desarrollador"
+            "p p";
+        grid-template-columns: 50% 50%;
+        align-items: center;
+        text-align: center;
+    }
+
+    #contenedor-imagen {
+        max-width: 90%;
+        height: auto;
+        border-radius: 50%;
+        grid-area: imagen;
+    }
+
+    #nombre {
+        padding: 0;
+        text-align: left;
+        grid-area: nombre;
+        font-size: 30px;
+    }
+
+    #desarrollador {
+        padding: 0;
+        margin: 10px 0 50px 0;
+        font-size: 20px;
+        text-align: left;
+        grid-area: desarrollador;
+    }
+
+    #contenedor-presentacion {
+        margin-right: 40px;
+        text-align: center;
+        grid-area: p;
+        font-size: 18px;
+    }
+
+    #contenedor-conocimientos h5,
+    #contenedor-cursos h5 {
+        font-size: 30px;
+    }
+
+    #contenedor-conocimientos ul {
+        list-style: none;
+        padding-left: 28px;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        /* Dos columnas fluidas */
+        gap: 1em;
+        /* Espaciado entre elementos */
+        align-items: center;
+        text-align: center;
+    }
+
+    #contenedor-conocimientos li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 1em;
+    }
+
+    #contenedor-conocimientos li img {
+        max-width: 100%;
+        margin-bottom: 0.5em;
+    }
+
+    #contenedor-cursos ul {
+        align-items: center;
+        text-align: center;
+        list-style: none;
+        padding-left: 80px;
+        margin: 0;
+        display: grid;
+        gap: 1em;
+        /* Espaciado entre elementos */
+    }
+
+    #contenedor-cursos li img {
+        max-width: 150%;
+        height: auto;
+    }
+
+    #contenedor-cursos>ul>li:nth-child(1) img,
+    #contenedor-cursos>ul>li:nth-child(2) img {
+
+        margin-left: -53px;
+
+    }
+
+
+    #contenedor-cursos li h5 {
+        font-size: 20px;
+    }
+
+    #contenedor-cursos li p {
+        font-size: 15px;
+    }
+
+    footer {
+        font-size: 17px;
+    }
+
+    footer a {
+        font-size: 22px;
+    }
+
+    footer img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
